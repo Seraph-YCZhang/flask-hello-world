@@ -1,12 +1,13 @@
 from flask import Flask
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__)
 
-OPEN_AI_KEY  = "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"
-
+print(os.environ.get('OPENAI_API_KEY'))
 client = OpenAI(
-    api_key=OPEN_AI_KEY
 )
 
 @app.route('/')
