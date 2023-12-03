@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>OpenAI Quickstart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+    <script>
+        // alert({url}})
+        // alert({{revised_prompt}})
+    </script>
+</head>
+
+<body>
+    <h3>Cozy</h3>
+    <form action="/" method="post">
+        <textarea type="text" name="prompt" placeholder="Enter a prompt" required >{{prompt}}</textarea>
+        <input type="submit" value="Generate images" />
+    </form>
+    {% if url %}
+    <div class="result">{{ url }}</div>
+    {% endif %}
+    {% if revised_prompt %}
+    <div class="result">{{ revised_prompt }}</div>
+    {% endif %}
+    {% if url %}
+    <img src="{{ url }}" />
+    {% endif %}
+</body>
